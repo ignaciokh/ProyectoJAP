@@ -177,8 +177,9 @@ document.addEventListener("DOMContentLoaded", function (e) {
                         </div>    
                     </div>
                 </div>`
+
+            document.getElementById("contenedorProductos").innerHTML = htmlContentToAppend;
             }
-        document.getElementById("contenedorProductos").innerHTML = htmlContentToAppend;
         }
     });
 });
