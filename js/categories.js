@@ -6,6 +6,9 @@ var currentSortCriteria = undefined;
 var minCount = undefined;
 var maxCount = undefined;
 
+
+
+
 function sortCategories(criteria, array){
     let result = [];
     if (criteria === ORDER_ASC_BY_NAME)
@@ -32,17 +35,33 @@ function sortCategories(criteria, array){
         });
     }
 
-    return result;
+    return result;// va a dar como resultado una array results con los elementos ordenados
 }
+
+/*function compare(a, b) {
+  if (a > b) return 1; // si el primer valor es mayor que el segundo
+  if (a == b) return 0; // si ambos valores son iguales
+  if (a < b) return -1; // si el primer valor es menor que el segundo
+}*/
+
+//currentCategoriesArray.sort(sortCategories) ----> tambien puede ser utilizado de esta manera 
+
+
+
+
+
+
+
 
 function showCategoriesList(){
 
     let htmlContentToAppend = "";
     for(let i = 0; i < currentCategoriesArray.length; i++){
-        let category = currentCategoriesArray[i];
+        let category = currentCategoriesArray[i]; // variable creada al coemienzo del código
 
         if (((minCount == undefined) || (minCount != undefined && parseInt(category.productCount) >= minCount)) &&
-            ((maxCount == undefined) || (maxCount != undefined && parseInt(category.productCount) <= maxCount))){
+            ((maxCount == undefined) || (maxCount != undefined && parseInt(category.productCount) <= maxCount))){ // comprueba que category.productCount esté entre las valores agregados en el elemento
+                //Si estan agregadoas con esos elementos agrega el html.
 
             htmlContentToAppend += `
             <a href="category-info.html" class="list-group-item list-group-item-action">
@@ -66,6 +85,16 @@ function showCategoriesList(){
     }
 }
 
+
+
+
+
+
+
+
+
+
+
 function sortAndShowCategories(sortCriteria, categoriesArray){
     currentSortCriteria = sortCriteria;
 
@@ -78,6 +107,19 @@ function sortAndShowCategories(sortCriteria, categoriesArray){
     //Muestro las categorías ordenadas
     showCategoriesList();
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
@@ -134,3 +176,4 @@ document.addEventListener("DOMContentLoaded", function(e){
         showCategoriesList();
     });
 });
+//Esta última parte forma todo el add eventlistener

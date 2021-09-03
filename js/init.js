@@ -10,11 +10,17 @@ const CART_BUY_URL = "https://japdevdep.github.io/ecommerce-api/cart/buy.json";
 function validacion() {
   let usuario = localStorage.getItem("usuario");
   let contrasena = localStorage.getItem("contrasena");
-  console.log(usuario);
-  console.log(contrasena);
-  if (!location.pathname.endsWith("index.html")) {
+  
+  if (!location.pathname.endsWith("logIn.html")) {
     if (usuario === null || contrasena === null) {
-      window.location.href = "index.html";
+      window.location.href = "logIn.html";
+    }else{
+      let contenedor = document.getElementsByClassName("container d-flex flex-column flex-md-row justify-content-between");
+      let infoUsuario = document.createElement("p");
+      infoUsuario.innerHTML = `Usuario: ${usuario}`
+     
+      contenedor[0].appendChild(infoUsuario);
+      infoUsuario.style = "color: white;"
     }
   }
 }

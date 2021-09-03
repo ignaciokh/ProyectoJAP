@@ -139,3 +139,12 @@ a.custom-card:hover {
 .checked {
   color: orange;
 }
+
+.nameUsuario {
+  color: white;
+}
+
+#formularioBusqueda{
+  width: 300px;
+  display: inline-block;
+}

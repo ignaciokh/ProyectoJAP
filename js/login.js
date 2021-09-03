@@ -16,6 +16,6 @@ function enviar(){
     }else{
         localStorage.setItem("usuario", usuario); //setItem almacena el dato en la posición "usuario"
         localStorage.setItem("contrasena", contrasena);
-        window.location.href = "home.html";
+        window.location.href = "index.html";
     }
 }
