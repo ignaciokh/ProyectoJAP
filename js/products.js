@@ -50,7 +50,7 @@ function showProductsList(){
               
 
             htmlContentToAppend +=  `
-                <div class="list-group-item">
+                <div class="list-group-item"  onclick="sendProducsInfo()">
                     <div>
                         <div class="d-flex justify-content-between">
                             <h4 class="card-title"> ${product.name} </h4>
@@ -155,10 +155,10 @@ document.addEventListener("DOMContentLoaded", function (e) {
         let contenedor = document.getElementById("formularioBusqueda");
 
         for(JsonContent of JsonContenido){
-            if(contenedor.value === JsonContent.name){
+            if(JsonContent.name.indexOf(contenedor.value) != -1){
                 
             htmlContentToAppend =  `
-                <div class="list-group-item">
+                <div class="list-group-item"  onclick="sendProducsInfo()">
                     <div>
                         <div class="d-flex justify-content-between">
                             <h4 class="card-title"> ${JsonContent.name} </h4>
@@ -179,7 +179,13 @@ document.addEventListener("DOMContentLoaded", function (e) {
                 </div>`
 
             document.getElementById("contenedorProductos").innerHTML = htmlContentToAppend;
+            if(contenedor.value === "")
+                showProductsList();
             }
         }
     });
 });
+
+    function sendProducsInfo(){
+        window.location.href = "product-info.html";
+    }

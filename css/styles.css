@@ -148,3 +148,7 @@ a.custom-card:hover {
   width: 300px;
   display: inline-block;
 }
+
+.nameProduct{
+  align-content: center;
+}

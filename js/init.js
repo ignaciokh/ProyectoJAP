@@ -21,8 +21,30 @@ function validacion() {
      
       contenedor[0].appendChild(infoUsuario);
       infoUsuario.style = "color: white;"
+
     }
   }
+}
+
+function salirusuario(){
+  let contenedor = document.getElementsByClassName("container d-flex flex-column flex-md-row justify-content-between");
+  let botonSalir = document.createElement("button");
+  botonSalir.type = "button";
+  botonSalir.className = "btn btn-secondary";
+  botonSalir.innerHTML = "Salir";
+
+  botonSalir.addEventListener("click", function(){
+
+    let usuario = localStorage.getItem("usuario");
+    let contrasena = localStorage.getItem("contrasena");
+    usuario = "";
+    contrasena = "";
+
+    window.location.href = "logIn.html"
+
+  })
+
+  contenedor[0].appendChild(botonSalir);
 }
 
 
@@ -65,4 +87,5 @@ var getJSONData = function(url){
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
   validacion();
+  salirusuario()
 });

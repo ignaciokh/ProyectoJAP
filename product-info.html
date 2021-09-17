@@ -13,6 +13,7 @@
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -23,16 +24,71 @@
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
       <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 3 (Fecha de entrega: 19/09/2021) y Entrega 4 (Fecha de entrega: 03/10/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
-    </div>
+
+  <main role="main">
+    <div class = "container  mb-5" >
+    <h3 class="text-center my-4" id="nombreProductos"></h3>
+    <hr>
+    <dl>
+      <dd  class="container">
+        <div id="imgContent" class="row justify-content-md-center ">          
+        
+        </div>
+      </dd>
+      <dt>Categoría</dt>
+      <dd>
+        <p id="categoriasProducts"></p>
+      </dd>
+      <dt>Descripción</dt>
+      <dd>
+        <p id="descripction"></p>
+      </dd>
+      <dt>Costo</dt>
+      <dd>
+        <p id="currencyCost"></p>
+      </dd>
+      <dt> Artículos vendidos</dt>
+      <dd>
+        <p id="soldCount"></p>
+      </dd>
+    </dl>
   </div>
+  <br>
+
+  <div id="ContenedorComents" class="container">
+  </div>
+
+
+
+  <div class="container">
+    <div class="row p-1 m-3">
+      <p class="col-lg-12 mt-5"><strong>Comentario:</strong></p>
+      <textarea name="comentario" class="col-lg-9" id="areaComentario" cols="30" rows="10"></textarea>
+      <div class="col-lg-3">
+        <div class="row m-3">
+          <p class="col-lg-10 col-sm-6"><strong>Puntuación:</strong></p>
+          <form class="col-lg-12 col-sm-6">
+            <select name="Puntuacion"  style= "width: 30%" id="PuntuacionProduct">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+            </select>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div>
+      <input type="button" value="Enviar" class="btn btn-primary active" onclick="postComments()">
+    </div>
+  </div>  
+</main>
+
+
   <footer class="text-muted">
     <div class="container">
       <p class="float-right">
@@ -50,6 +106,7 @@
       <div></div>
     </div>
   </div>
+  <link rel="stylesheet" href="/css/estiloCom.css">
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
