@@ -17,11 +17,16 @@ function validacion() {
     }else{
       let contenedor = document.getElementsByClassName("container d-flex flex-column flex-md-row justify-content-between");
       let infoUsuario = document.createElement("p");
-      infoUsuario.innerHTML = `Usuario: ${usuario}`
-     
-      contenedor[0].appendChild(infoUsuario);
-      infoUsuario.style = "color: white;"
+      infoUsuario.innerHTML = `
+      <div class = "fixed-top ml-3">
+      <div class="chip">
+      <img src="img/img_avatar.png" alt="Person" width="96" height="96">
+      ${usuario}
+      </div>
+      </div>
+    `;
 
+      contenedor[0].appendChild(infoUsuario);
     }
   }
 }
