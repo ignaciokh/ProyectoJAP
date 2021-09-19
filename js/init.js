@@ -19,15 +19,14 @@ function validacion() {
       let infoUsuario = document.createElement("p");
       infoUsuario.innerHTML = `
       <div class = "align-self-start">
-      <div class="chip">
-      <img src="img/img_avatar.png" alt="Person" width="96" height="96">
-      ${usuario}
-      </div>
+        <div class="chip">
+          <img src="img/img_avatar.png" alt="Person" width="96" height="96">
+          ${usuario}
+        </div>
       </div>
       `;
 
       contenedor[0].prepend(infoUsuario);
-      //infoUsuario.className = "fixed-top ml-3";
     }
   }
 }
