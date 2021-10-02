@@ -23,70 +23,88 @@
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
 
     </div>
   </nav>
-
   <main role="main">
-    <div class = "container  mb-5" >
-    <h3 class="text-center my-4" id="nombreProductos"></h3>
-    <hr>
-    <dl>
-      <dd  class="container">
-        <div id="imgContent" class="row justify-content-md-center ">          
-        
-        </div>
-      </dd>
-      <dt>Categoría</dt>
-      <dd>
-        <p id="categoriasProducts"></p>
-      </dd>
-      <dt>Descripción</dt>
-      <dd>
-        <p id="descripction"></p>
-      </dd>
-      <dt>Costo</dt>
-      <dd>
-        <p id="currencyCost"></p>
-      </dd>
-      <dt> Artículos vendidos</dt>
-      <dd>
-        <p id="soldCount"></p>
-      </dd>
-    </dl>
-  </div>
-  <br>
+    <div class="container  mb-5">
+      <h3 class="text-center my-4" id="nombreProductos"></h3>
 
-  <div id="ContenedorComents" class="container">
-  </div>
+      <hr>
+      <dl>
+        <dd class="my-5">
+          <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner" id="imgContent">
+
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </dd>
+
+        <dt>Categoría</dt>
+        <dd>
+          <p id="categoriasProducts"></p>
+        </dd>
+        <dt>Descripción</dt>
+        <dd>
+          <p id="descripction"></p>
+        </dd>
+        <dt>Costo</dt>
+        <dd>
+          <p id="currencyCost"></p>
+        </dd>
+        <dt> Artículos vendidos</dt>
+        <dd>
+          <p id="soldCount"></p>
+        </dd>
+      </dl>
+    </div>
+    <br>
+
+    <div class="container">
+      <h6><b>Productos realacionados:</b></h6>
+      <div class="row gx-3 my-5" id="ContenedorProductosRel">
+
+      </div>
+
+    </div>
+
+    <div id="ContenedorComents" class="container">
+    </div>
 
 
 
-  <div class="container">
-    <div class="row p-1 m-3">
-      <p class="col-lg-12 mt-5"><strong>Comentario:</strong></p>
-      <textarea name="comentario" class="col-lg-9" id="areaComentario" cols="30" rows="10"></textarea>
-      <div class="col-lg-3">
-        <div class="row m-3">
-          <p class="col-lg-10 col-sm-6"><strong>Puntuación:</strong></p>
-          <form class="col-lg-12 col-sm-6">
-            <select name="Puntuacion"  style= "width: 30%" id="PuntuacionProduct">
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-            </select>
-          </form>
+    <div class="container">
+      <div class="row p-1 m-3">
+        <p class="col-lg-12 mt-5"><strong>Comentario:</strong></p>
+        <textarea name="comentario" class="col-lg-9" id="areaComentario" cols="30" rows="10"></textarea>
+        <div class="col-lg-3">
+          <div class="row m-3">
+            <p class="col-lg-10 col-sm-6"><strong>Puntuación:</strong></p>
+            <form class="col-lg-12 col-sm-6">
+              <select name="Puntuacion" style="width: 30%" id="PuntuacionProduct">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
-    <div>
-      <input type="button" value="Enviar" class="btn btn-primary active" onclick="postComments()">
-    </div>
-  </div>  
-</main>
+      <div>
+        <input type="button" id="botonProductInfo" value="Enviar" class="btn btn-primary" onclick="postComments()">
+      </div>
+    </div>    
+  </main>
 
 
   <footer class="text-muted">

@@ -16,40 +16,30 @@ function validacion() {
       window.location.href = "logIn.html";
     }else{
       let contenedor = document.getElementsByClassName("container d-flex flex-column flex-md-row justify-content-between");
-      let infoUsuario = document.createElement("p");
+      let infoUsuario = document.createElement("div");
       infoUsuario.innerHTML = `
-      <div class = "align-self-start">
-        <div class="chip">
-          <img src="img/img_avatar.png" alt="Person" width="96" height="96">
-          ${usuario}
+      <div class="dropdown" id = "usuarioLogIn">
+          <div class="chip btn btn-secondary dropdown-toggle bg-secondary text-white" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <img src="img/img_avatar.png" alt="Person" width="96" height="96">
+            ${usuario}
+          </div>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="cart.html">Mi Carrito</a>
+          <a class="dropdown-item" href="my-profile.html">Perfil</a>
+          <a class="dropdown-item" onclick="emptyUser()" href="logIn.html" >Cerrar Sesión</a>
         </div>
       </div>
       `;
 
-      contenedor[0].prepend(infoUsuario);
+      contenedor[0].appendChild(infoUsuario);
     }
   }
 }
 
-function salirusuario(){
-  let contenedor = document.getElementsByClassName("container d-flex flex-column flex-md-row justify-content-between");
-  let botonSalir = document.createElement("button");
-  botonSalir.type = "button";
-  botonSalir.className = "btn btn-secondary";
-  botonSalir.innerHTML = "Salir";
-
-  botonSalir.addEventListener("click", function(){
-
-    let usuario = localStorage.getItem("usuario");
-    let contrasena = localStorage.getItem("contrasena");
-    usuario = "";
-    contrasena = "";
-
-    window.location.href = "logIn.html"
-
-  })
-
-  contenedor[0].appendChild(botonSalir);
+/* Vacía los datos de usuario y contraseña para al salir del usuario no puedas accader con al link ya que
+al no existir registros de usaurio y contraseña la funcion validacion() redirige automaticamente a LogIn */ 
+function emptyUser(){
+  localStorage.clear();
 }
 
 
@@ -92,5 +82,4 @@ var getJSONData = function(url){
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
   validacion();
-  salirusuario()
 });

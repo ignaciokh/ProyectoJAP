@@ -57,6 +57,7 @@ footer p {
 .site-header a {
   color: white;
   transition: ease-in-out color .15s;
+  margin-top: 10px;
 }
 
 .light-text {
@@ -169,4 +170,39 @@ a.custom-card:hover {
   height: 50px;
   width: 50px;
   border-radius: 50%;
+}
+
+#formularioBusqueda{
+  position: absolute;
+  top: 0%;
+  left: 3%;
+  width: 200px;
+}
+
+#usuarioLogIn{
+  position: absolute;
+  top: 0%;
+  right: 10%;
+}
+
+.ComentConteiner{
+  border: solid black 2px;
+  border-radius: 15px 50px 30px 5px;
+  padding: 15px;
+  margin-top: 50px;
+  background-color: #D2D1D2;
+}
+
+#areaComentario{
+  height: 150px;
+}
+
+#botonProductInfo{
+  position: relative;
+  left: 68%;
+}
+
+#botonProductInfo:hover{
+  opacity: 0.5;
+  border: solid black 1.5px;
 }
