@@ -49,25 +49,17 @@ function showProductsList() {
 
 
             htmlContentToAppend += `
-                <div class="list-group-item m-3"  onclick="sendProducsInfo()">
+            <div class="card col-10 col-lg-5 m-3 p-3" style="width: 25rem; border-radius: 5%; background-color: #C1C1C1;" onclick="sendProducsInfo()">
+                <img src="${product.imgSrc}" class="card-img-top" alt="...">
+                <div class ="card-body">
+                    <h4 class ="card-title">${product.name}</h4>
+                    <p><small class ="text-secondary">Total de artículos vendidos: ${product.soldCount} </small></p>
+                    <p class ="card-text">${product.description}</p>
                     <div>
-                        <div class="d-flex justify-content-between">
-                            <h4 class="card-title"> ${product.name} </h4>
-                            <p><small class="text-secondary">Total de artículos vendidos:  ${product.soldCount} </small></p>
-                        </div>
-                        <div>
-                            <p> ${product.description} </p>
-                        </div>
+                    <p class = "mt-2">${product.currency} ${product.cost}</p>
                     </div>
-                    <div>
-                        <div class="img">
-                            <img src=" ${product.imgSrc}" " class="img-fluid">
-                        </div>
-                        <div>
-                            <p class = "mt-2">${product.currency} ${product.cost}</p>
-                        </div>    
-                    </div>
-                </div>`
+                </div>
+            </div>`
         }
 
         document.getElementById("contenedorProductos").innerHTML = htmlContentToAppend;
@@ -151,14 +143,14 @@ document.addEventListener("DOMContentLoaded", function (e) {
         let h4 = document.getElementsByTagName("h4");
 
         for (let i = 0; i < h4.length; i++) {
-        let contenido = h4[i].innerText;
-    
+            let contenido = h4[i].innerText;
+
             if (contenido.toLowerCase().indexOf(contenedor.value.toLowerCase()) !== -1) {
-                h4[i].parentNode.parentNode.parentNode.style.display = "";
-            }else{
-                h4[i].parentNode.parentNode.parentNode.style.display = "none";
+                h4[i].parentNode.parentNode.style.display = "";
+            } else {
+                h4[i].parentNode.parentNode.style.display = "none";
             }
-        }   
+        }
     });
 });
 
@@ -168,3 +160,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
 function sendProducsInfo() {
     window.location.href = "product-info.html";
 }
+
+
+
+

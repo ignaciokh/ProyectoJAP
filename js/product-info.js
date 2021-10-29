@@ -1,6 +1,5 @@
 var infoProducts = [];
 
-
 //Mostrar el producto y elementos 
 function showProductsInfo(data){
 
@@ -151,14 +150,19 @@ function postComments(){
 
 
 
-
 document.addEventListener("DOMContentLoaded", function(e){
     getJSONData(PRODUCT_INFO_URL).then(function (enlace) {
         if (enlace.status === "ok") {
             
             showProductsInfo(enlace.data);
             infoProducts = enlace.data;
-            
+        
+            getJSONData(PRODUCTS_URL).then(function (enlace) {
+                if (enlace.status === "ok") {
+        
+                    relatedProducts(enlace.data);
+                }
+            });
         }
     });
     getJSONData(PRODUCT_INFO_COMMENTS_URL).then(function (enlace) {
@@ -167,13 +171,6 @@ document.addEventListener("DOMContentLoaded", function(e){
             showComents(enlace.data)
         };
     });
-    getJSONData(PRODUCTS_URL).then(function (enlace) {
-        if (enlace.status === "ok") {
-
-            relatedProducts(enlace.data)
-        }
-    });
-
 });
 
 

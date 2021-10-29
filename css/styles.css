@@ -145,11 +145,6 @@ a.custom-card:hover {
   color: white;
 }
 
-#formularioBusqueda{
-  width: 300px;
-  display: inline-block;
-}
-
 .nameProduct{
   align-content: center;
 }
@@ -172,17 +167,11 @@ a.custom-card:hover {
   border-radius: 50%;
 }
 
-#formularioBusqueda{
-  position: absolute;
-  top: 0%;
-  left: 3%;
-  width: 200px;
-}
-
 #usuarioLogIn{
-  position: absolute;
+  position: relative;
   top: 0%;
-  right: 10%;
+  left: 0pt;
+  background-color: none;
 }
 
 .ComentConteiner{
@@ -205,4 +194,12 @@ a.custom-card:hover {
 #botonProductInfo:hover{
   opacity: 0.5;
   border: solid black 1.5px;
+}
+
+#imgCargada{
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: solid 1px grey;
+  padding: 3px;
 }

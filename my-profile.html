@@ -5,7 +5,6 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <title>eMercado - Todo lo que busques está aquí</title>
 
@@ -42,26 +41,67 @@
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 6 (Fecha de entrega: 31/10/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+  <main class="pb-5">
+    <div class="container py-5 text-center">
+      <h3>Mi Usuario</h3>
     </div>
-  </div>
-  <footer class="text-muted bg-light">
     <div class="container">
-      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
-      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+
+
+
+
+      <img id="imgCargada" src="" alt=""><br>
+      <input class="btn btn-light mb-5 mt-2" type="file" id="Imagen">
+    
+
+
+      
+
+      <div class="row">
+        <div class="col-12 col-lg-6">
+          <label for="">Nombre:</label>
+          <input class="form-control form-control-lg" id="nombre" type="text" style="font-size: medium;">
+        </div>
+        <div class="col-12 col-lg-6">
+          <label for="">Apellido:</label>
+          <input class="form-control form-control-lg" id="apellido" type="text" style="font-size: medium;">
+        </div>
+      </div>
+      <div class="row my-5">
+        <div class="col-5 col-lg-5">
+          <label for="">Fecha de nacimiento:</label><br>
+          <input class="form-control form-control-lg" id="edad" type="date" style="font-size: small;">
+        </div>
+        <div class="col-7 col-lg-7">
+          <label for="">Telefono:</label><br>
+          <input class="form-control form-control-lg" id="telefono" type="text" style="font-size: medium;">
+        </div>
+        <div></div>
+      </div>
+      <div class="row">
+        <div class="col-12 col-lg-7">
+          <label for="">Correo electronico:</label><br>
+          <input class="form-control form-control-lg" id="correo" type="text" style="font-size: medium;">
+        </div>
+      </div>
+      <div style="width: 100%;">
+        <button type="button" class="btn btn-primary my-5" style="position:relative; left: 80%;"
+          onclick="guardarDatos()">Guardar</button>
+      </div>
     </div>
-  </footer>
-  <div class="alert fade alert-success" role="alert" id="alertResult">
-    <span id="resultSpan"></span>
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
+  </main>
+
+
+
+
+
+
+
+
+
+
+
+
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>

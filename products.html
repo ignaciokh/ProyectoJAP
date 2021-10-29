@@ -3,7 +3,6 @@
 <html lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <title>eMercado - Todo lo que busques está aquí</title>
 
@@ -16,7 +15,6 @@
   <body>
     <nav class="site-header sticky-top py-1 bg-dark">
       <div class="container d-flex flex-column flex-md-row justify-content-between">
-        <input type="text" id="formularioBusqueda" class="form-control my-2" placeholder= "buscar">
         <a class="py-2 d-block d-md-inline-block" href="index.html">Inicio</a>
         <a class="py-2 d-block d-md-inline-block" href="categories.html">Categorías</a>
         <a class="py-2 d-block d-md-inline-block" href="products.html">Productos</a>
@@ -24,8 +22,9 @@
       </div>
     </nav>
 
-    <div class="container">
-      <h2 class="text-center p-5 my-3">Productos</h2>
+    <div class="container text-center p-4">
+      <h2>Productos</h2>
+      <p class="lead">Podrás encontrar todos los productos disponibles</p>
     </div>
     <div class="container">
       <div class="row">
@@ -45,7 +44,7 @@
       </div>
       <div class="row justify-content-end">
         <div class="col-md-6"></div>
-          <div class="col-md-6 col-sm-12 mb-1 container">
+          <div class="col-md-6 col-10 mb-1 container">
             <div class="row container p-0 m-0">
               <div class="col">
                 <p class="font-weight-normal text-right my-2">Precio:</p>
@@ -69,10 +68,20 @@
           <div class="list-group" id="cat-list-container">
           </div>
       </div>
+      <div class="row justify-content-end mt-5">
+        <div class="col-12 col-lg-6">
+          <input type="text" id="formularioBusqueda" class="form-control my-2" placeholder= "buscar">
+        </div>
+      </div>
   </div>
 
-    <div class="container p-5" id="contenedorProductos"></div>
 
+
+    <!--Contenedor de los productos del Json-->
+    <div class="container py-5" >
+      <div class= "row justify-content-center" id="contenedorProductos">
+
+      </div>
     </div>
     <footer class="text-muted bg-light">
       <div class="container">
