@@ -1,3 +1,6 @@
+let envioValue = 0.05;
+
+//Muestro todo slos productos
 function showProducts(info){
 
     let HtmlContent = "";
@@ -22,6 +25,7 @@ function showProducts(info){
 }
 
 
+//Subtotal 
 function totalCount(input, cost, ubicacion, currency){
 
     if(currency === "UYU"){
@@ -33,6 +37,7 @@ function totalCount(input, cost, ubicacion, currency){
 }
 
 
+// Precio total 
 function totalPrice(){
     total = 0;
     subtotal = document.getElementsByClassName("subtotal");
@@ -42,7 +47,54 @@ function totalPrice(){
         s.innerHTML = `USD ${content}`
     }
     document.getElementById("totalCount").innerHTML = `USD ${total}`;
+
 }
+
+
+
+
+//Costos tomando en cuenta el tipo de envío 
+function TotalCost(){
+
+    let totalValue = parseInt(document.getElementById("totalCount").innerHTML.substr(4));
+    let subtotal = document.getElementById("subtotalCostos");
+    let envio = document.getElementById("envioCostos");
+    let total = document.getElementById("tatalCostos");
+    
+    console.log(totalValue);
+
+    subtotal.innerHTML = totalValue;//valos subtotal musmi que el total
+    let dataEnvio = totalValue * envioValue; //Costo de envío
+    envio.innerHTML = parseInt(dataEnvio);    
+    let totalValueData = totalValue + dataEnvio //valor total para agragrale un string de Dolares
+    total.innerHTML = "USD " + parseInt(totalValueData);
+}
+
+
+
+
+
+
+//Validación de formulario
+(function() {
+    'use strict';
+    window.addEventListener('load', function() {
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      var forms = document.getElementsByClassName('needs-validation');
+      // Loop over them and prevent submission
+      var validation = Array.prototype.filter.call(forms, function(form) {
+        form.addEventListener('submit', function(event) {
+          if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+          }
+          form.classList.add('was-validated');
+        }, false);
+      });
+    }, false);
+  })();
+
+
 
 
 
@@ -53,4 +105,16 @@ document.addEventListener("DOMContentLoaded", function(e){
             showProducts(info.data);
         }
     });
+});
+document.getElementById("oro").addEventListener("change", function(e){
+    envioValue = 0.15;
+    TotalCost();
+});
+document.getElementById("premium").addEventListener("change", function(e){
+    envioValue = 0.07;
+    TotalCost();
+});
+document.getElementById("estandar").addEventListener("change", function(e){
+    envioValue = 0.05;
+    TotalCost();
 });
