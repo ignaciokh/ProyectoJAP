@@ -203,3 +203,20 @@ a.custom-card:hover {
   border: solid 1px grey;
   padding: 3px;
 }
+
+.emptyField{
+
+  border: solid 2px red;
+
+}
+
+.mensajeError{
+  display: none;
+  color: red;
+
+}
+
+#enviarDatos{
+  position: relative;
+  left: 85%;
+}
