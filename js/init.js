@@ -16,16 +16,18 @@ function validacion() {
     if (usuario === null || contrasena === null) {
       window.location.href = "logIn.html";
     }else{
-      let contenedor = document.getElementsByClassName("container d-flex flex-column flex-md-row justify-content-between");
+      let contenedor = document.getElementById("UsuarioContenedor");
       let infoUsuario = document.createElement("div");
       infoUsuario.innerHTML = `
-      <div class="dropdown" id = "usuarioLogIn" >
-          <div class="dropdown-toggle text-white py-2" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <div class="dropdown">
+          <div class="dropdown-toggle text-white" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
               <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
               <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
             </svg>
+            <span id = "usuarioLogIn">
             ${usuario}
+            </span>
           </div>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <a class="dropdown-item" href="cart.html">Mi Carrito</a>
@@ -35,7 +37,7 @@ function validacion() {
       </div>
       `;
 
-      contenedor[0].appendChild(infoUsuario);
+      contenedor.appendChild(infoUsuario);
     }
   }
 }
@@ -80,6 +82,8 @@ var getJSONData = function(url){
         return result;
     });
 }
+
+
 
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los

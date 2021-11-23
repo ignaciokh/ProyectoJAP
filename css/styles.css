@@ -167,11 +167,23 @@ a.custom-card:hover {
   border-radius: 50%;
 }
 
+.nav-item a{
+  color: white;
+  font-size: 17px;
+}
+
+.nav-item{
+  margin-left: 50px;
+}
+/*Ajusto el tamaño para que cuando se achica no se vea mas ese margen*/
+@media (max-width: 1000px){
+  .nav-item{
+    margin-left: 0px;
+  }
+}
+
 #usuarioLogIn{
-  position: relative;
-  top: 0%;
-  left: 0pt;
-  background-color: none;
+  font-size: 17px;
 }
 
 .ComentConteiner{
@@ -220,3 +232,11 @@ a.custom-card:hover {
   position: relative;
   left: 85%;
 }
+
+
+
+
+
+
+
+

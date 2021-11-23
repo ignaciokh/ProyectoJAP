@@ -120,11 +120,18 @@ function showComents(data){
 function postComments(){
     let comentario = document.getElementById("areaComentario").value;
     let usuario = localStorage.getItem("usuario");
-    let puntuacion = document.getElementById("PuntuacionProduct");
+    let puntuacion = document.getElementsByName("estrellas");
     let comentariosLista = document.getElementById("ContenedorComents");
     let fecha = new Date();
+    let starCount = 0;
     
-
+    //Conteo de estrellas
+    puntuacion.forEach(e => {
+        if(e.checked){
+            starCount = parseInt(e.value);
+        }
+    });
+    
 
     if(comentario === ""){
         alert("Debes completar todos los campos antes de enviar tu comentario");
@@ -138,7 +145,7 @@ function postComments(){
             </div>    
             <p>${comentario}</p>
             <div>
-                <p>${checkStars(parseInt(puntuacion.value))}</p>
+                <p>${checkStars(starCount)}</p>
             </div>
         <div>`
 
