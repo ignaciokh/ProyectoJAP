@@ -23,7 +23,6 @@ function showImagesInfo(array){
         `
     document.getElementById("imgContent").innerHTML = HTMLContettoHappened;// Fuera del for porque la primer imagen necesita tener clase active 
     
-
     for(let i = 1; i< array.images.length; i++){
       
         let HTMLContent = 
@@ -90,11 +89,11 @@ function checkStars(data){
 
 // Mustra los cometarios recuperados del doc Json
 function showComents(data){
-
+    let index = 0;
     for(datos of data){
 
         let HTMLContent = `
-            <div class="ComentConteiner" >
+            <div id = ${index} class = "commentContainer">
                 <div class=" mb-4">
                     <div class = "d-flex justify-content-end"">
                         <small class = "text-muted">${datos.dateTime}</small> 
@@ -108,10 +107,33 @@ function showComents(data){
                 </div>
             <div>
         `
+        index ++;
         document.getElementById("ContenedorComents").innerHTML += HTMLContent;
+        commentColor();
     }
+    
 }
 
+
+
+
+
+
+//Colores de comentarios 
+function commentColor(){
+
+    let contenedor = document.getElementsByClassName("commentContainer");
+    for(let i = 0; i < contenedor.length; i++){
+
+        let e = contenedor[i];
+        
+        if(e.id % 2 === 0){
+            e.className = "ComentConteiner1 addClass";
+        }else{
+            e.className = "ComentConteiner2 addClass";
+        };
+    };
+};
 
 
 
@@ -137,8 +159,18 @@ function postComments(){
         alert("Debes completar todos los campos antes de enviar tu comentario");
     }else{
 
+        let contenedor = document.getElementsByClassName("addClass");
+        let identificador = "";
+        marcador = contenedor.length;
+        if(marcador % 2 === 0){
+            identificador = "ComentConteiner1";
+        }else{
+            identificador = "ComentConteiner2";
+        };
+
+
         let contentHTML =
-        `<div class="ComentConteiner" >
+        `<div class = "${identificador} addClass">
             <div class="d-flex w-100 justify-content-between mb-4">
                 <div class = "mb-1"><strong>${usuario}</strong></div>
                 <small class = "text-muted">${fecha.getDay()}/${fecha.getMonth()}/${fecha.getFullYear()} - ${fecha.getHours()}:${fecha.getMinutes()}:${fecha.getSeconds()}</small>
@@ -149,12 +181,11 @@ function postComments(){
             </div>
         <div>`
 
-
         comentariosLista.innerHTML += contentHTML;
         document.getElementById("areaComentario").value = "";
+        
     }
 }
-
 
 
 document.addEventListener("DOMContentLoaded", function(e){
@@ -175,7 +206,7 @@ document.addEventListener("DOMContentLoaded", function(e){
     getJSONData(PRODUCT_INFO_COMMENTS_URL).then(function (enlace) {
         if (enlace.status === "ok"){
 
-            showComents(enlace.data)
+            showComents(enlace.data);
         };
     });
 });

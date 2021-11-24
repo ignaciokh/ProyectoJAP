@@ -186,13 +186,25 @@ a.custom-card:hover {
   font-size: 17px;
 }
 
-.ComentConteiner{
-  border: solid black 2px;
+.ComentConteiner1{
+  border: solid black 1.5px;
   border-radius: 15px 50px 30px 5px;
   padding: 15px;
   margin-top: 50px;
-  background-color: #D2D1D2;
+  background-color: #ffc1073d;
+
 }
+
+
+.ComentConteiner2{
+  border: solid black 1.5px;
+  border-radius: 15px 50px 30px 5px;
+  padding: 15px;
+  margin-top: 50px;
+  background-color: #007bff1f;
+
+}
+
 
 #areaComentario{
   height: 150px;
