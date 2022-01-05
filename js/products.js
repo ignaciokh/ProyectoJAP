@@ -49,8 +49,9 @@ function showProductsList() {
 
 
             htmlContentToAppend += `
-            <div class="card col-10 col-lg-5 m-3 p-3" style="width: 25rem; border-radius: 5%; background-color: #C1C1C1;" onclick="sendProducsInfo()">
-                <img src="${product.imgSrc}" class="card-img-top" alt="...">
+            <div class="card col-12 col-lg-3 m-3 p-3" style="border-radius: 2%; background-color: #D3D3D3;">
+                <img src="${product.imgSrc}" class="card-img-top" style= "border-radius: 5%; cursor:pointer" alt="..." onclick="sendProducsInfo()">
+                <hr>
                 <div class ="card-body">
                     <h4 class ="card-title">${product.name}</h4>
                     <p><small class ="text-secondary">Total de artículos vendidos: ${product.soldCount} </small></p>
@@ -59,12 +60,31 @@ function showProductsList() {
                     <p class = "mt-2">${product.currency} ${product.cost}</p>
                     </div>
                 </div>
+                <button class="btn btn-dark" onclick=sendCarrito("${product.imgSrc}","${product.currency}",${product.cost})><i class="fas fa-shopping-cart"></i></button>
             </div>`
         }
 
         document.getElementById("contenedorProductos").innerHTML = htmlContentToAppend;
     }
 }
+
+
+//REDIRECCIONES
+sendCarrito = (img, moneda, precio) => {
+
+    let objetoCarrito = 
+    {
+    "imagen": img,                    
+    "moneda": moneda,
+    "precio": precio
+    }
+
+    console.log(objetoCarrito);
+    localStorage.setItem('ObjetosCarritoCompra', JSON.stringify(objetoCarrito));
+
+};
+
+sendProducsInfo = () => window.location.href = "product-info.html";
 
 
 
@@ -154,12 +174,6 @@ document.addEventListener("DOMContentLoaded", function (e) {
     });
 });
 
-
-
-//Redireción a info products
-function sendProducsInfo() {
-    window.location.href = "product-info.html";
-}
 
 
 

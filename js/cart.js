@@ -71,6 +71,7 @@ function deleteElement(e) {
     totalPrice();
 }
 
+
 //Validación de campos
 function validate() {
 
@@ -124,8 +125,7 @@ function validate() {
             validateContent = false;
         }
     }
-    if (validateContent === true) {
-        alert("Información enviada de manera");
+    if (validateContent === true) {    
         let inputConten = document.getElementsByClassName("form-control");
         for (data of inputConten) {
             if (data.class === "emptyField");
@@ -136,6 +136,8 @@ function validate() {
             if (p.style.display === "block");
             p.style.display = "none";
         }
+        alert("Información enviada de manera");
+
     } else {
         alert("Necesita completar todos los campos");
     }
@@ -166,3 +168,7 @@ document.getElementById("estandar").addEventListener("change", function (e) {
 document.getElementById("enviarDatos").addEventListener("click", function (e) {
     validate();
 });
+
+
+let carritoGuardado = localStorage.getItem("ObjetosCarritoCompra")
+console.log(JSON.parse(carritoGuardado));

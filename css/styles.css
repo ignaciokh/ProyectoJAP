@@ -1,3 +1,5 @@
+
+
 .jumbotron, .card-body, .container, .site-header{
     font-family: 'Raleway', serif !important;
 }
@@ -186,6 +188,23 @@ a.custom-card:hover {
   font-size: 17px;
 }
 
+#dropdownMenuButton:hover #usuarioLogIn
+{
+  opacity: 0;
+}
+
+#dropdownMenuButton:hover .bi-person-circle
+{
+  transform: scale(2) translate(20px);
+  color: #00438E;
+}
+
+.bi-person-circle
+{
+  transition: 0.5s;
+}
+
+
 .ComentConteiner1{
   border: solid black 1.5px;
   border-radius: 15px 50px 30px 5px;
@@ -240,15 +259,100 @@ a.custom-card:hover {
 
 }
 
-#enviarDatos{
-  position: relative;
-  left: 85%;
+
+
+.ContenedorProductosData 
+{
+  margin: auto;
+  max-width: 1400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 30px;
+
+}
+
+.fa-times-circle
+{
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.fa-times-circle:hover{
+  color: #FC6464;
+  transform: scale(1.25);
 }
 
 
+#ContenedorTiposEnvio
+{
+  border: solid #E1E1E1;
+  background-color: #E1E1E1;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+#ContenedorEnvios
+{
+  border: solid #E1E1E1;
+  background-color: #E1E1E1;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  overflow: hidden;
+  height: 450px;
+}
+
+#enviarDatos
+{
+  float: right;
+}
+
+#toggleBoton
+{
+  color: red;
+  font-size: 18px;
+}
+
+input
+{
+  cursor: pointer;
+}
+
+@media (max-width: 1000px){
+  #ContenedorEnvios{
+    height: 500px;
+  }
+}
+
+.table
+{
+  border: solid #E1E1E1;
+  background-color: #E1E1E1;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.DireccionData
+{
+  background-color: #B7CCFF;
+  padding: 10px;
+  transition: 0.25s;
+}
+
+.DireccionData:hover
+{
+  transform: scale(1.10);
+  background-color: #A7C2FF;
+}
+
+.nav-link
+{
+  transition: 0.25s;
+}
 
 
-
-
-
-
+.nav-link:hover
+{
+  transform: scale(1.10);
+  color: black;
+}
