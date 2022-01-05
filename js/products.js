@@ -69,7 +69,7 @@ function showProductsList() {
 }
 
 
-//REDIRECCIONES
+//Gurdando data de producto en local para pasar a carrito
 sendCarrito = (img, moneda, precio) => {
 
     let objetoCarrito = 
@@ -84,6 +84,7 @@ sendCarrito = (img, moneda, precio) => {
 
 };
 
+//REDIRECCIÓN
 sendProducsInfo = () => window.location.href = "product-info.html";
 
 
