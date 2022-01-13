@@ -1,4 +1,3 @@
-const ORDER_ASC_BY_PRICE = "Precio de mayor a menor";
 const ORDER_DESC_BY_PRICE = "Precio de menor a mayor";
 const ORDER_BY_PROD_RELEVANT = "Relevancia";
 var currentCategoriesArray = [];
@@ -69,8 +68,7 @@ function showProductsList() {
 }
 
 
-//REDIRECCIONES
-sendCarrito = () => window.location.href = "cart.html";
+//REDIRECCIÓN
 sendProducsInfo = () => window.location.href = "product-info.html";
 
 
