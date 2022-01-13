@@ -50,13 +50,15 @@
       <div class="row">
           <div class="col text-right">
               <div class="btn-group btn-group-toggle mb-4" data-toggle="buttons">
-                  <label class="btn btn-light active" id="sortAsc" >
-                      <input type="radio" name="options" autocomplete="off" checked>Menor
+                  <label class="inputsOrdenado btn btn-light active" id="sortAsc" >
+                      <input type="radio" name="options" autocomplete="off" checked>
+                      <span><i id="iconosOrdenado" class="fas fa-sort-numeric-down"></i></span>
                   </label>
-                  <label class="btn btn-light" id="sortDesc" >
-                      <input type="radio" name="options" autocomplete="off">Mayor
+                  <label class="inputsOrdenado btn btn-light" id="sortDesc" >
+                      <input type="radio" name="options" autocomplete="off">
+                      <span><i id="iconosOrdenado" class="fas fa-sort-numeric-down-alt"></i></span>
                   </label>
-                  <label class="btn btn-light" id="sortByCount" >
+                  <label class="inputsOrdenado btn btn-light" id="sortByCount" >
                       <input type="radio" name="options" autocomplete="off"><i class="fas fa-sort-amount-down mr-1"></i>Relevancia
                   </label>
               </div>
@@ -117,5 +119,6 @@
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/init.js"></script>
     <script src="js/products.js"></script>
+    <script src= "js/agregarAlCarrito.js"></script>
   </body>
 </html>

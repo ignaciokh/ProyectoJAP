@@ -18,7 +18,7 @@ function showImagesInfo(array){
 
     let HTMLContettoHappened = `
     <div class="carousel-item active">
-        <img src="${array.images[0]}" class="d-block w-100">
+        <img src="${array.images[0]}" class="d-block w-100 rounded">
     </div>
         `
     document.getElementById("imgContent").innerHTML = HTMLContettoHappened;// Fuera del for porque la primer imagen necesita tener clase active 
@@ -46,7 +46,7 @@ function relatedProducts(data){
 
         htmlContent = `
         <div class="col-12 col-lg-3 " onclick= "sendProducts()">
-                <div class="card border border-3 my-2 bg-light" style="width: 250px; height: 350px;">
+                <div id= "RelatedProducts"class="card border border-3 my-2 bg-light">
                     <img src="${data[info[i]].imgSrc}" class="card-img-top" alt="...">
                     <div class="card-body">
                     <h5 class="card-title">${data[info[i]].name}</h5>

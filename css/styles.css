@@ -188,14 +188,14 @@ a.custom-card:hover {
   font-size: 17px;
 }
 
-#dropdownMenuButton:hover #usuarioLogIn
+#UsuarioContenedor:hover #usuarioLogIn
 {
   opacity: 0;
 }
 
-#dropdownMenuButton:hover .bi-person-circle
+#UsuarioContenedor:hover .bi-person-circle
 {
-  transform: scale(2) translate(20px);
+  transform: scale(2) translate(25px);
   color: #00438E;
 }
 
@@ -217,7 +217,7 @@ a.custom-card:hover {
 
 .ComentConteiner2{
   border: solid black 1.5px;
-  border-radius: 15px 50px 30px 5px;
+  border-radius: 30px 50px 5px 30px;
   padding: 15px;
   margin-top: 50px;
   background-color: #007bff1f;
@@ -309,9 +309,22 @@ a.custom-card:hover {
 
 #toggleBoton
 {
-  color: red;
-  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  margin-top: 10px;
+  background-color: #727875;
+  padding: 10px;
+  font-size: 16px;
+  color: white;
 }
+
+#toggleBoton:hover
+{
+  background-color: #717171;
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+
 
 input
 {
@@ -355,4 +368,33 @@ input
 {
   transform: scale(1.10);
   color: black;
+}
+
+#RelatedProducts{
+  width: 250px; 
+  height: 350px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  cursor: pointer;
+}
+
+#areaComentario
+{
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+#RelatedProducts:hover
+{
+  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+#iconosOrdenado
+{
+  transform: scale(1.4);
+}
+
+
+.inputsOrdenado
+{
+  cursor: pointer;
 }

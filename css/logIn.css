@@ -1,34 +1,38 @@
+:root
+{
+  --color-principal: #A077E8
+}
+
 html,
 body {
  height: 100%;
 }
 
 body {
-  width: 100%;
-  align-items: center;
-  padding-top: 40px;
-  padding-bottom: 40px;
   background: url('../img/LogIn.jpg');
   background-repeat: no-repeat;
+  display: flex;
+  justify-content:flex-end;
+  align-items: center;
 }
 
 .login-form {
-  position: absolute;
-  top: 30%;
-  right: 10%;
   width: 400px;
   height: 400px;
   padding: 40px;
   text-align: center;
+  margin-right: 50px;
 }
 
 .form-control {
-  border-bottom: 2px solid #A077E8;
-  background: none;
+  border: none;
+  border-bottom: 2px solid var(--color-principal);
   display: block;
   margin: 20px auto;
   padding: 14px 10px;
   text-align: center;
+  font-size: 18px;
+  background-color: none;
 }
 
 
@@ -36,15 +40,17 @@ body {
   width: 200px;
   height: 40px;
   margin: 40px auto 10px auto;
-  border-color: #A077E8;
+  text-align: center;
+  border-color: var(--color-principal);
   border-radius: 3px;
-  background-color: #A077E8;
+  background-color: var(--color-principal);
   font-family:'Times New Roman', Times, serif ;
   font-size: 20px;
 }
 
 #button-Login:hover{
   background-color: #815FBB;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 #enlace {
@@ -52,6 +58,6 @@ body {
 }
 
 #link{
-  color: #A077E8;
+  color: var(--color-principal);
 }
     

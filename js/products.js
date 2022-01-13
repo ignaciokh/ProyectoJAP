@@ -5,7 +5,6 @@ var currentCategoriesArray = [];
 var currentSortCriteria = undefined;
 var minCount = undefined;
 var maxCount = undefined;
-var JsonContenido = [];
 
 
 function sortProduct(criteria, array) {
@@ -47,9 +46,10 @@ function showProductsList() {
         if (((minCount == undefined) || (minCount != undefined && parseInt(product.cost) >= minCount)) &&
             ((maxCount == undefined) || (maxCount != undefined && parseInt(product.cost) <= maxCount))) { // comprueba que category.productCount esté entre las valores agregados en el elemento
 
+            
 
             htmlContentToAppend += `
-            <div class="card col-12 col-lg-3 m-3 p-3" style="border-radius: 2%; background-color: #D3D3D3;">
+            <div class="card col-5 col-lg-3 m-3 p-3" style="border-radius: 2%; background-color: #D3D3D3;">
                 <img src="${product.imgSrc}" class="card-img-top" style= "border-radius: 5%; cursor:pointer" alt="..." onclick="sendProducsInfo()">
                 <hr>
                 <div class ="card-body">
@@ -60,7 +60,7 @@ function showProductsList() {
                     <p class = "mt-2">${product.currency} ${product.cost}</p>
                     </div>
                 </div>
-                <button class="btn btn-dark" onclick=sendCarrito("${product.imgSrc}","${product.currency}",${product.cost})><i class="fas fa-shopping-cart"></i></button>
+                <button onclick= sendProducsInfo(); class="btn btn-dark agregarCarrito" ><i class="fas fa-shopping-cart"></i></button>
             </div>`
         }
 
@@ -70,20 +70,7 @@ function showProductsList() {
 
 
 //REDIRECCIONES
-sendCarrito = (img, moneda, precio) => {
-
-    let objetoCarrito = 
-    {
-    "imagen": img,                    
-    "moneda": moneda,
-    "precio": precio
-    }
-
-    console.log(objetoCarrito);
-    localStorage.setItem('ObjetosCarritoCompra', JSON.stringify(objetoCarrito));
-
-};
-
+sendCarrito = () => window.location.href = "cart.html";
 sendProducsInfo = () => window.location.href = "product-info.html";
 
 

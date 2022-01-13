@@ -22,8 +22,10 @@ function showProducts(info) {
         document.getElementById("productsContainer").innerHTML += HtmlContent;
         totalCount(data[i].count, data[i].unitCost, i, data[i].currency);
     }
-
 }
+
+
+
 
 //Precio Subtotal 
 function totalCount(input, cost, ubicacion, currency) {
@@ -169,6 +171,3 @@ document.getElementById("enviarDatos").addEventListener("click", function (e) {
     validate();
 });
 
-
-let carritoGuardado = localStorage.getItem("ObjetosCarritoCompra")
-console.log(JSON.parse(carritoGuardado));
