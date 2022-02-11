@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@200&display=swap');
+
 :root
 {
   --color-principal: #A077E8
@@ -20,19 +22,22 @@ body {
   width: 400px;
   height: 400px;
   padding: 40px;
-  text-align: center;
-  margin-right: 50px;
+  margin-right: 8vh;
+}
+
+.text-center{
+  font-family: 'Be Vietnam Pro';
+  font-weight: bold;
 }
 
 .form-control {
   border: none;
   border-bottom: 2px solid var(--color-principal);
-  display: block;
   margin: 20px auto;
   padding: 14px 10px;
   text-align: center;
   font-size: 18px;
-  background-color: none;
+  font-family: 'Be Vietnam Pro';
 }
 
 
@@ -44,8 +49,9 @@ body {
   border-color: var(--color-principal);
   border-radius: 3px;
   background-color: var(--color-principal);
-  font-family:'Times New Roman', Times, serif ;
-  font-size: 20px;
+  font-family:'Be Vietnam Pro';
+  font-size: 18px;
+  font-weight: bold;
 }
 
 #button-Login:hover{
